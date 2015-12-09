@@ -2,5 +2,18 @@
  <body>
   <h1><%= @username_1 %> v <%= @username_2 %></h1>
   <%= @username_2 %>: 100HP
+
+  <div id='actions'>
+    <form action='/attack' method='post'>
+      <input type="submit" value="attack">
+    </form>
+  </div>
+
+  <div id='results'>
+    <% if @attack %>
+      You attack <%= @username_2 %>!
+    <% end %>
+  </div>
+
  </body>
 </html>
