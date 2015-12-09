@@ -10,7 +10,6 @@ class Battle < Sinatra::Base
 
   post '/names' do
     p params
-    p session
     session[:username_1] = params[:username_1]
     session[:username_2] = params[:username_2]
     p session
