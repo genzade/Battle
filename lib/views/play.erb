@@ -1,7 +1,7 @@
 <html>
  <body>
-  <h1><%= @username_1 %> v <%= @username_2 %></h1>
-  <%= @username_2 %>: 100HP
+  <h1><%= $user_1.name %> v <%= $user_2.name %></h1>
+  <%= $user_2.name %>: 100HP
 
   <div id='actions'>
     <form action='/attack' method='post'>
@@ -11,7 +11,7 @@
 
   <div id='results'>
     <% if @attack %>
-      You attack <%= @username_2 %>!
+      You attack <%= $user_2.name %>!
     <% end %>
   </div>
 
