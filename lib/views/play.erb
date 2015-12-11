@@ -1,19 +1,21 @@
+<!DOCTYPE html>
 <html>
  <body>
-  <h1><%= $user_1.name %> v <%= $user_2.name %></h1>
-  <%= $user_2.name %>: 100HP
+  <div>
+    <h1><%= @username_1.name %> v <%= @username_2.name %></h1>
+  </div>
+  
+  <div>
+    <%= @username_1.name %>: <%=@username_1.hp%>HP 
+  </div>
+  <div>
+    <%= @username_2.name %>: <%=@username_2.hp%>HP 
+  </div>
 
   <div id='actions'>
-    <form action='/attack' method='post'>
-      <input type="submit" value="attack">
+    <form action="/attack">
+      <input type="submit" value="Attack">
     </form>
   </div>
-
-  <div id='results'>
-    <% if @attack %>
-      You attack <%= $user_2.name %>!
-    <% end %>
-  </div>
-
  </body>
 </html>
