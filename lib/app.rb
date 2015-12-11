@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'player'
+require_relative 'game'
 
 class Battle < Sinatra::Base
 
@@ -10,6 +11,7 @@ class Battle < Sinatra::Base
   post '/names' do
     $user_1 = Player.new(params[:user_1])
     $user_2 = Player.new(params[:user_2])
+    $game = Game.new($user_1, $user_2)
     redirect '/play'
   end
 
@@ -20,9 +22,11 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @username_1 = $user_1
-    @username_2 = $user_2
-    @username_2.attack(@username_1) 
+    # @username_1 = $user_1
+    # @username_2 = $user_2
+    # @username_2.attack(@username_1)
+    @game = $game
+    @game.attack(@game.player_1)
     erb(:attack)
   end
 

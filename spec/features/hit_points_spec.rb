@@ -11,6 +11,6 @@ feature 'Play Page' do
     sign_in_and_play
     click_button 'Attack'
     click_link 'Retaliate'
-    expect(page).to have_content 'Ham: 90HP'
+    expect(page).to have_content 'Sara: 90HP'
   end
 end

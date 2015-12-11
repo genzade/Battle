@@ -8,8 +8,8 @@ class Player
     @hp = DEFAULT_HP
   end
 
-  def attack name
-    @hp -= 10
+  def health value
+    @hp -= value 
   end
 
 end

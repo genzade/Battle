@@ -5,7 +5,6 @@ require 'player'
 
 describe Player do
   subject(:player) { described_class.new(:name) }
-  let(:name) { double :name }
 
   describe '#name' do
     it 'player name' do
@@ -13,9 +12,14 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'reduces player HP' do
-      expect { player.attack(:name) }.to change { player.hp }.by -10
+  describe '#hp' do
+    it 'reduces hp value' do
+      expect { player.health(10) }.to change { player.hp }.by(-10)
     end
   end
+  # describe '#attack' do
+  #   it 'reduces player HP' do
+  #     expect { player.attack(:name) }.to change { player.hp }.by -10
+  #   end
+  # end
 end
